@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kaizen Ambassadors — Kaizen Academy</title>
+<meta name="description" content="Earn 25% commission for every practitioner you refer to Kaizen Academy. Open application, no quotas, reviewed personally." />
+<link rel="icon" href="http://practitioner.kaizenacademy.education/Tcia.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet" />
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --yellow: #ffd559;
+    --yellow-dark: #e6be3e;
+    --yellow-soft: rgba(255,213,89,0.08);
+    --yellow-border: rgba(255,213,89,0.25);
+    --black: #0d0d0d;
+    --dark: #1a1a1a;
+    --mid: #2e2e2e;
+    --charcoal: #36414D;
+    --grey: #8a8a8a;
+    --grey-light: #c4c4c4;
+    --light: #f5f5f0;
+    --light-2: #ebebe5;
+    --cream: #faf9f4;
+    --white: #ffffff;
+    --border: #e5e5e0;
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --shadow-sm: 0 2px 8px rgba(13,13,13,0.06);
+    --shadow-md: 0 8px 24px rgba(13,13,13,0.12);
+    --shadow-lg: 0 20px 48px rgba(13,13,13,0.18);
+    --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--light);
+    color: var(--charcoal);
+    line-height: 1.6;
+    text-wrap: pretty;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+  @media (max-width: 768px) { .container { padding: 0 1.25rem; } }
+
+  .section { padding: 6rem 0; }
+  .section--tight { padding: 4rem 0; }
+  @media (max-width: 900px) { .section { padding: 4rem 0; } }
+
+  .section--white { background: var(--white); }
+  .section--cream { background: var(--cream); }
+  .section--dark  { background: var(--black); color: var(--grey-light); }
+  .section--light { background: var(--light); }
+  .section--yellow { background: var(--yellow); }
+
+  /* ─── Typography ─────────────────────────── */
+  h1, h2, h3, h4 { font-family: var(--font-display); color: var(--black); letter-spacing: -0.02em; }
+
+  .h-display {
+    font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+    font-weight: 800;
+    line-height: 1.08;
+    color: var(--white);
+  }
+  .h-section {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.12;
+  }
+  .h-sub { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 700; }
+
+  .lead {
+    font-family: var(--font-body);
+    font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+    font-weight: 400;
+    max-width: 56ch;
+    color: var(--grey-light);
+    line-height: 1.65;
+  }
+  .section--white .lead, .section--cream .lead, .section--light .lead { color: var(--charcoal); }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    border-radius: 999px;
+    padding: 0.4rem 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  .eyebrow--dark { color: var(--yellow); border: 1px solid var(--yellow-border); }
+  .eyebrow--light { color: var(--charcoal); border: 1px solid var(--border); }
+
+  .accent { color: var(--yellow); }
+
+  p.body-copy { font-size: 1rem; color: var(--charcoal); line-height: 1.7; max-width: 62ch; }
+  .section--dark p.body-copy { color: var(--grey-light); }
+
+  /* ─── Buttons ─────────────────────────── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 0 1.75rem;
+    min-height: 44px;
+    border: 2px solid transparent;
+    transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition);
+    cursor: pointer;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn--lg { min-height: 52px; padding: 0 2.25rem; font-size: 1.02rem; }
+
+  .btn--primary { background: var(--yellow); color: var(--black); }
+  .btn--primary:hover { background: var(--yellow-dark); box-shadow: var(--shadow-md); }
+
+  .btn--dark { background: var(--black); color: var(--yellow); border-color: var(--yellow-border); }
+  .btn--dark:hover { background: var(--mid); box-shadow: var(--shadow-md); border-color: var(--yellow); }
+
+  .btn--outline { background: transparent; color: var(--black); border-color: var(--border); }
+  .btn--outline:hover { border-color: var(--black); }
+
+  /* ─── Layout helpers ─────────────────────────── */
+  .grid { display: grid; gap: 2rem; }
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 900px) { .grid-2, .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+
+  .mt-4 { margin-top: 2rem; } .mb-2 { margin-bottom: 1rem; } .mb-4 { margin-bottom: 2rem; }
+
+  /* ═══════════════════════════════════════
+     HEADER (Kaizen Academy standard — do not edit per-page)
+  ════════════════════════════════════════ */
+  .ka-header { position: sticky; top: 0; z-index: 100; background: var(--black); border-bottom: 2px solid var(--yellow); }
+  .ka-header__bar { max-width: 1200px; margin: 0 auto; padding: 0 2rem; height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+  .ka-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; flex-shrink: 0; }
+  .ka-logo img { width: 42px; height: 42px; border-radius: 50%; border: 2px solid var(--yellow); object-fit: cover; }
+  .ka-logo__text { display: flex; flex-direction: column; line-height: 1; }
+  .ka-logo__name { font-family: var(--font-display); font-weight: 800; font-size: 1.05rem; color: var(--white); letter-spacing: -0.02em; }
+  .ka-logo__name span { color: var(--yellow); }
+  .ka-logo__tagline { font-size: 0.62rem; font-weight: 300; color: var(--grey); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 2px; }
+  .ka-nav { display: flex; align-items: center; gap: 0.25rem; }
+  .ka-nav a { font-family: var(--font-body); font-size: 0.85rem; font-weight: 500; color: #ccc; text-decoration: none; padding: 0.45rem 0.85rem; border-radius: 6px; transition: color var(--transition), background var(--transition); white-space: nowrap; }
+  .ka-nav a:hover { color: var(--yellow); background: rgba(255,213,89,0.08); }
+  .ka-nav a.active { color: var(--yellow); }
+  .ka-header__cta { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--yellow); color: var(--black); font-family: var(--font-display); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.02em; text-decoration: none; padding: 0.55rem 1.2rem; border-radius: 6px; border: 2px solid var(--yellow); transition: background var(--transition), color var(--transition); flex-shrink: 0; white-space: nowrap; }
+  .ka-header__cta:hover { background: transparent; color: var(--yellow); }
+  .ka-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 0.4rem; background: none; border: none; }
+  .ka-hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+  .ka-mobile-nav { display: none; flex-direction: column; background: var(--dark); border-top: 1px solid #2e2e2e; padding: 1rem 2rem 1.5rem; gap: 0.25rem; }
+  .ka-mobile-nav a { font-size: 0.9rem; font-weight: 500; color: #ccc; text-decoration: none; padding: 0.65rem 0; border-bottom: 1px solid #2e2e2e; }
+  .ka-mobile-nav a:last-child { border-bottom: none; }
+  .ka-mobile-nav a:hover { color: var(--yellow); }
+  .ka-mobile-nav .ka-header__cta { margin-top: 0.75rem; justify-content: center; }
+  .ka-mobile-nav.open { display: flex; }
+  @media (max-width: 680px) { .ka-nav, .ka-header__cta { display: none; } .ka-hamburger { display: flex; } }
+
+  /* ═══════════════════════════════════════
+     HERO
+  ════════════════════════════════════════ */
+  .hero { padding: 5rem 0 5.5rem; text-align: center; }
+  .hero .eyebrow { margin-left: auto; margin-right: auto; }
+  .hero .h-display { max-width: 16ch; margin: 0 auto 1.5rem; }
+  .hero .lead { margin: 0 auto 2.5rem; }
+  .hero__ctas { display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .hero__note { margin-top: 1.25rem; font-size: 0.85rem; color: var(--grey); }
+  .hero__note strong { color: var(--yellow); font-weight: 700; }
+
+  /* ═══════════════════════════════════════
+     STAT STRIP
+  ════════════════════════════════════════ */
+  .stat-strip { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stat-strip__item { text-align: center; padding: 2rem 1rem; border-right: 1px solid rgba(13,13,13,0.15); }
+  .stat-strip__item:last-child { border-right: none; }
+  .stat-strip__num { font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 800; color: var(--black); }
+  .stat-strip__label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--charcoal); margin-top: 0.35rem; }
+  @media (max-width: 768px) { .stat-strip { grid-template-columns: repeat(2, 1fr); } .stat-strip__item:nth-child(2) { border-right: none; } .stat-strip__item { border-bottom: 1px solid rgba(13,13,13,0.15); } .stat-strip__item:nth-last-child(-n+2) { border-bottom: none; } }
+
+  /* ═══════════════════════════════════════
+     STEPS
+  ════════════════════════════════════════ */
+  .steps { counter-reset: step; }
+  .step { text-align: left; }
+  .step__num {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--yellow); color: var(--black);
+    font-family: var(--font-display); font-weight: 800; font-size: 1.15rem;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+  .step__title { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .step__desc { font-size: 0.92rem; color: var(--grey); line-height: 1.6; }
+
+  /* ═══════════════════════════════════════
+     BENEFIT LIST
+  ════════════════════════════════════════ */
+  .benefit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 3rem; margin-top: 2.5rem; }
+  @media (max-width: 700px) { .benefit-grid { grid-template-columns: 1fr; } }
+  .benefit {
+    display: flex; align-items: flex-start; gap: 0.9rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.4rem;
+  }
+  .benefit__check {
+    flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+    background: var(--black); color: var(--yellow);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem; font-weight: 700; margin-top: 0.1rem;
+  }
+  .benefit__text strong { display: block; font-weight: 700; color: var(--black); margin-bottom: 0.2rem; font-size: 0.98rem; }
+  .benefit__text span { font-size: 0.88rem; color: var(--grey); line-height: 1.55; }
+
+  /* ═══════════════════════════════════════
+     ACCENT BANNER
+  ════════════════════════════════════════ */
+  .accent-banner { text-align: center; padding: 4.5rem 0; }
+  .accent-banner .h-section { color: var(--black); max-width: 22ch; margin: 0 auto 2rem; }
+  .accent-banner__note { margin-top: 1.5rem; font-size: 0.85rem; color: var(--mid); display: flex; align-items: center; justify-content: center; gap: 0.6rem; }
+  .accent-banner__note img { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--black); }
+
+  /* ═══════════════════════════════════════
+     FAQ
+  ════════════════════════════════════════ */
+  .faq { max-width: 780px; margin: 3rem auto 0; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 1.5rem 0; }
+  .faq-item:first-child { border-top: 1px solid var(--border); }
+  .faq-item h3 { font-size: 1.02rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--black); }
+  .faq-item p { font-size: 0.93rem; color: var(--charcoal); line-height: 1.65; max-width: none; }
+
+  /* ═══════════════════════════════════════
+     FOOTER (Kaizen Academy standard — do not edit per-page)
+  ════════════════════════════════════════ */
+  .ka-footer { background: var(--black); border-top: 3px solid var(--yellow); color: #ccc; font-family: var(--font-body); }
+  .ka-footer__top { max-width: 1200px; margin: 0 auto; padding: 3.5rem 2rem 2.5rem; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 3rem; }
+  .ka-footer__logo { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; margin-bottom: 1rem; }
+  .ka-footer__logo img { width: 38px; height: 38px; border-radius: 50%; border: 2px solid var(--yellow); }
+  .ka-footer__logo-name { font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: var(--white); }
+  .ka-footer__logo-name span { color: var(--yellow); }
+  .ka-footer__desc { font-size: 0.83rem; line-height: 1.7; color: #888; margin-bottom: 1.5rem; max-width: 260px; }
+  .ka-footer__social { display: flex; gap: 0.6rem; }
+  .ka-footer__social a { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; border: 1px solid #333; color: #888; text-decoration: none; font-size: 0.85rem; transition: border-color var(--transition), color var(--transition), background var(--transition); }
+  .ka-footer__social a:hover { border-color: var(--yellow); color: var(--yellow); background: rgba(255,213,89,0.06); }
+  .ka-footer__cert { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,213,89,0.08); border: 1px solid rgba(255,213,89,0.25); border-radius: 8px; padding: 0.6rem 0.9rem; margin-top: 1.5rem; font-size: 0.75rem; color: #aaa; }
+  .ka-footer__cert strong { color: var(--yellow); font-weight: 600; }
+  .ka-footer__col h4 { font-family: var(--font-display); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--yellow); margin-bottom: 1rem; }
+  .ka-footer__col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+  .ka-footer__col ul li a { font-size: 0.84rem; color: #888; text-decoration: none; transition: color var(--transition); display: flex; align-items: center; gap: 0.3rem; }
+  .ka-footer__col ul li a::before { content: '→'; font-size: 0.7rem; opacity: 0; transform: translateX(-4px); transition: opacity var(--transition), transform var(--transition); }
+  .ka-footer__col ul li a:hover { color: var(--white); }
+  .ka-footer__col ul li a:hover::before { opacity: 1; transform: translateX(0); }
+  .ka-footer__bottom { max-width: 1200px; margin: 0 auto; padding: 1.2rem 2rem; border-top: 1px solid #222; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .ka-footer__copy { font-size: 0.78rem; color: #555; }
+  .ka-footer__copy a { color: var(--yellow); text-decoration: none; }
+  @media (max-width: 900px) { .ka-footer__top { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+  @media (max-width: 680px) { .ka-footer__top { grid-template-columns: 1fr; gap: 2rem; } .ka-footer__desc { max-width: 100%; } }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     HEADER
+════════════════════════════════════════ -->
+<header class="ka-header">
+  <div class="ka-header__bar">
+    <a href="https://continuousimprovement.education" class="ka-logo">
+      <img src="https://firebasestorage.googleapis.com/v0/b/image-upload-ka.firebasestorage.app/o/Default%2Flogo_round.png?alt=media&token=5da7babb-b626-4f31-83b6-2075fa0be3bf" alt="Kaizen Academy Logo" />
+      <div class="ka-logo__text">
+        <span class="ka-logo__name">Kaizen <span>Academy</span></span>
+        <span class="ka-logo__tagline">Continuous Improvement</span>
+      </div>
+    </a>
+
+    <nav class="ka-nav">
+      <a href="https://academy.continuousimprovement.education/p/toyota-production-system-and-lean-fundamentals1">TPS &amp; Lean</a>
+      <a href="https://academy.continuousimprovement.education/p/advanced-value-stream-mapping">Value Stream</a>
+      <a href="https://academy.continuousimprovement.education/p/en-home">Problem Solving</a>
+      <a href="https://academy.continuousimprovement.education/p/business-process-management">BPM</a>
+      <a href="https://academy.continuousimprovement.education/p/certified-lean-practitioner-training-bundle">Certification</a>
+    </nav>
+
+    <a href="#apply" class="ka-header__cta">Become an Ambassador</a>
+
+    <button class="ka-hamburger" id="kaHamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <nav class="ka-mobile-nav" id="kaMobileNav">
+    <a href="https://academy.continuousimprovement.education/p/toyota-production-system-and-lean-fundamentals1">TPS &amp; Lean Fundamentals</a>
+    <a href="https://academy.continuousimprovement.education/p/advanced-value-stream-mapping">Value Stream Mapping</a>
+    <a href="https://academy.continuousimprovement.education/p/en-home">Scientific Problem Solving</a>
+    <a href="https://academy.continuousimprovement.education/p/business-process-management">Business Process Management</a>
+    <a href="https://academy.continuousimprovement.education/p/certified-lean-practitioner-training-bundle">Lean Practitioner Certification</a>
+    <a href="#apply" class="ka-header__cta">Become an Ambassador</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ═══════════════════════════════════════
+       HERO — dark
+  ════════════════════════════════════════ -->
+  <section class="section--dark hero">
+    <div class="container">
+      <span class="eyebrow eyebrow--dark">★ Kaizen Ambassadors</span>
+      <h1 class="h-display">You already recommend Kaizen&nbsp;Academy. Time we paid you for it.</h1>
+      <p class="lead">Earn 25% commission on every course you refer — including the flagship Certified Lean Practitioner Programme — plus a discount your network will actually use. No quotas. No script. Just genuine advocacy, rewarded properly.</p>
+      <div class="hero__ctas">
+        <a href="#apply" class="btn btn--dark btn--lg">Apply to Become an Ambassador →</a>
+      </div>
+      <p class="hero__note">Free to join · Open application · <strong>Reviewed personally</strong>, usually within a few days</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       STAT STRIP — yellow
+  ════════════════════════════════════════ -->
+  <section class="section--yellow">
+    <div class="stat-strip">
+      <div class="stat-strip__item"><div class="stat-strip__num">25%</div><div class="stat-strip__label">Commission per sale</div></div>
+      <div class="stat-strip__item"><div class="stat-strip__num">90 Days</div><div class="stat-strip__label">Referral tracking window</div></div>
+      <div class="stat-strip__item"><div class="stat-strip__num">$0</div><div class="stat-strip__label">Cost to join</div></div>
+      <div class="stat-strip__item"><div class="stat-strip__num">15+ yrs</div><div class="stat-strip__label">Behind the courses you'd refer</div></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       HOW IT WORKS — white
+  ════════════════════════════════════════ -->
+  <section class="section--white section">
+    <div class="container">
+      <span class="eyebrow eyebrow--light">How It Works</span>
+      <h2 class="h-section mb-4">Three steps. No red tape.</h2>
+      <div class="grid grid-3 steps">
+        <div class="step">
+          <div class="step__num">1</div>
+          <div class="step__title">Apply</div>
+          <div class="step__desc">A two-minute application. Tell us who you are and how you'd promote Kaizen Academy — that's it.</div>
+        </div>
+        <div class="step">
+          <div class="step__num">2</div>
+          <div class="step__title">Get your link</div>
+          <div class="step__desc">Approved ambassadors get a unique tracking link, plus a discount code that's already built in for your audience.</div>
+        </div>
+        <div class="step">
+          <div class="step__num">3</div>
+          <div class="step__title">Earn</div>
+          <div class="step__desc">25% commission on every enrolment your link generates, credited to you for a full 90 days after the click.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       WHAT YOU GET — cream
+  ════════════════════════════════════════ -->
+  <section class="section--cream section">
+    <div class="container">
+      <span class="eyebrow eyebrow--light">What's In It For You</span>
+      <h2 class="h-section mb-2">Recognition, not just a referral fee.</h2>
+      <p class="body-copy">Most affiliate programmes treat you like a traffic source. This one doesn't. You know this content because you've done the work — the commission just makes it worth your while to say so out loud.</p>
+
+      <div class="benefit-grid">
+        <div class="benefit">
+          <div class="benefit__check">✓</div>
+          <div class="benefit__text"><strong>25% on everything</strong><span>Every course and the Certified Lean Practitioner Programme, for as long as you're an ambassador.</span></div>
+        </div>
+        <div class="benefit">
+          <div class="benefit__check">✓</div>
+          <div class="benefit__text"><strong>90-day tracking window</strong><span>You're still credited even if they take a few weeks to decide — most people don't buy on the first click.</span></div>
+        </div>
+        <div class="benefit">
+          <div class="benefit__check">✓</div>
+          <div class="benefit__text"><strong>A discount for your audience</strong><span>Your link carries a discount automatically, so recommending it is an easy yes, not a hard sell.</span></div>
+        </div>
+        <div class="benefit">
+          <div class="benefit__check">✓</div>
+          <div class="benefit__text"><strong>Straightforward payouts</strong><span>Monthly payments, tracked sales in your own dashboard — no chasing anyone for a spreadsheet.</span></div>
+        </div>
+        <div class="benefit">
+          <div class="benefit__check">✓</div>
+          <div class="benefit__text"><strong>Resources, ready to share</strong><span>Swipe copy, banners, and course positioning — take what's useful, ignore what isn't.</span></div>
+        </div>
+        <div class="benefit">
+          <div class="benefit__check">✓</div>
+          <div class="benefit__text"><strong>No quotas</strong><span>Refer once a year or once a week. There's no minimum, and no pressure either way.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       WHO THIS IS FOR — white
+  ════════════════════════════════════════ -->
+  <section class="section--white section">
+    <div class="container">
+      <span class="eyebrow eyebrow--light">Is This You?</span>
+      <h2 class="h-section mb-2">Built for practitioners already in the room.</h2>
+      <p class="body-copy">Kaizen Ambassadors works best for people already active in the lean and continuous improvement space — LinkedIn voices, community leads, trainers, consultants, or graduates of our own courses who genuinely rate what we teach. You don't need a huge following. You need to actually believe in it, and be willing to say so.</p>
+      <p class="body-copy mt-4">If that's not quite you yet, the courses themselves are still open to everyone — <a href="https://academy.continuousimprovement.education" style="color:var(--black); font-weight:700;">have a look here →</a></p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       ACCENT BANNER — yellow
+  ════════════════════════════════════════ -->
+  <section class="section--yellow accent-banner" id="apply">
+    <div class="container">
+      <span class="eyebrow eyebrow--light" style="background:rgba(13,13,13,0.06);">Kaizen Ambassadors</span>
+      <h2 class="h-section">Your name already carries weight with your network. Let's make that worth something.</h2>
+      <a href="https://academy.continuousimprovement.education/p/ambassador" class="btn btn--dark btn--lg">Apply Now →</a>
+      <div class="accent-banner__note">
+        <img src="https://firebasestorage.googleapis.com/v0/b/image-upload-ka.firebasestorage.app/o/Default%2Fprofile-pic10.png?alt=media&token=2f5c5060-7eb3-40b6-8e13-a4fffc2042d2" alt="Ahmed Radwan" />
+        <span>Applications reviewed personally by Ahmed Radwan, founder of Kaizen Academy</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FAQ — cream
+  ════════════════════════════════════════ -->
+  <section class="section--cream section">
+    <div class="container">
+      <span class="eyebrow eyebrow--light">Questions</span>
+      <h2 class="h-section">Before you apply</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <h3>How much do I actually earn?</h3>
+          <p>A flat 25% commission on every course and on the Certified Lean Practitioner Programme, every time someone enrols through your link.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How long does my link stay credited to me?</h3>
+          <p>90 days from the moment someone clicks it — one of the longer windows going, because most people don't buy the first time they hear about something.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do the people I refer get anything?</h3>
+          <p>Yes. Every ambassador link carries a discount for whoever clicks it, so your recommendation does some of the selling for you.</p>
+        </div>
+        <div class="faq-item">
+          <h3>When and how do I get paid?</h3>
+          <p>Payouts run monthly via PayPal, for sales made at least 30 days earlier. Once your lifetime earnings pass $100, you'll be asked to file a quick tax form before payouts continue.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do I need a huge following to apply?</h3>
+          <p>No. This is judged on genuine fit and intent to promote — not follower count.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is there any cost to join?</h3>
+          <p>None. Applying and staying an ambassador is free.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer class="ka-footer">
+  <div class="ka-footer__top">
+    <div class="ka-footer__brand">
+      <a href="https://continuousimprovement.education" class="ka-footer__logo">
+        <img src="https://firebasestorage.googleapis.com/v0/b/image-upload-ka.firebasestorage.app/o/Default%2Flogo_round.png?alt=media&token=5da7babb-b626-4f31-83b6-2075fa0be3bf" alt="Kaizen Academy" />
+        <span class="ka-footer__logo-name">Kaizen <span>Academy</span></span>
+      </a>
+      <p class="ka-footer__desc">Practical lean and continuous improvement training built for real workplaces. Structured, certificate-backed, and designed to create lasting change.</p>
+      <div class="ka-footer__social">
+        <a href="https://www.linkedin.com/company/theciacademy" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@ContinuousImprovementAcademy" aria-label="YouTube" target="_blank" rel="noopener">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        </a>
+      </div>
+      <div class="ka-footer__cert">
+        <svg width="14" height="14" fill="#ffd559" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+        Certificates by <strong>Kaizen Academy Australia</strong>
+      </div>
+    </div>
+
+    <div class="ka-footer__col">
+      <h4>Courses</h4>
+      <ul>
+        <li><a href="https://academy.continuousimprovement.education/p/toyota-production-system-and-lean-fundamentals1?coupon_code=KAIZEN20">TPS &amp; Lean Fundamentals</a></li>
+        <li><a href="https://academy.continuousimprovement.education/p/advanced-value-stream-mapping?coupon_code=KAIZEN20">Value Stream Mapping</a></li>
+        <li><a href="https://academy.continuousimprovement.education/p/en-home?coupon_code=KAIZEN20">Scientific Problem Solving</a></li>
+        <li><a href="https://academy.continuousimprovement.education/p/business-process-management?coupon_code=KAIZEN20">Business Process Management</a></li>
+        <li><a href="https://academy.continuousimprovement.education/p/certified-lean-practitioner-training-bundle?coupon_code=KAIZEN20">Lean Practitioner Bundle</a></li>
+      </ul>
+    </div>
+
+    <div class="ka-footer__col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://www.linkedin.com/company/theciacademy" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.youtube.com/@ContinuousImprovementAcademy" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://continuousimprovement.education" target="_blank" rel="noopener">Main Site</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ka-footer__bottom">
+    <p class="ka-footer__copy">© <span id="kaYear"></span> Kaizen Academy Pty Ltd · Melbourne, Australia · ABN 44 682 421 745</p>
+  </div>
+</footer>
+
+<script>
+  const btn = document.getElementById('kaHamburger');
+  const nav = document.getElementById('kaMobileNav');
+  btn.addEventListener('click', () => nav.classList.toggle('open'));
+  document.getElementById('kaYear').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
